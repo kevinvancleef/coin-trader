@@ -8,6 +8,7 @@ use Coin\Trader\Domain\Currency;
 use Coin\Trader\Domain\Market;
 use Coin\Trader\Domain\MarketSummary;
 use Coin\Trader\Domain\OrderBook;
+use Coin\Trader\Domain\Transaction;
 
 /**
  * Class BittrexService
@@ -102,6 +103,22 @@ class BittrexService
         $response = $this->client->getOrderBook($marketShortName, $type);
 
         return OrderBook::fromArray($response['result']);
+    }
+
+    /**
+     * @param $marketShortName
+     * @return array
+     */
+    public function getMarketHistory($marketShortName): array
+    {
+        $response = $this->client->getMarketHistory($marketShortName);
+
+        $transactions = [];
+        foreach($response['result'] as $transactionData) {
+            $transactions[] = Transaction::fromArray($transactionData);
+        }
+
+        return $transactions;
     }
 
     /**

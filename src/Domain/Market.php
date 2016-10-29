@@ -56,7 +56,7 @@ class Market
      * @param array $data
      * @return Market
      */
-    public static function fromArray(array $data)
+    public static function fromArray(array $data): Market
     {
         $currency = $data['MarketCurrencyLong'] . ' (' . $data['MarketCurrency'] . ')';
 

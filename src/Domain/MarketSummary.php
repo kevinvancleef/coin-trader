@@ -94,7 +94,11 @@ class MarketSummary
         $this->volume = $volume;
     }
 
-    public static function fromArray(array $data)
+    /**
+     * @param array $data
+     * @return MarketSummary
+     */
+    public static function fromArray(array $data): MarketSummary
     {
         $dateMarketCreated = new \DateTime();
         $dateMarketCreated->setTimestamp(strtotime($data['Created']));

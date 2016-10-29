@@ -3,6 +3,7 @@ require __DIR__.'/bootstrap.php';
 
 use Coin\Trader\Command\Bittrex\BittrexCommandsProvider;
 use Coin\Trader\Command\Bittrex\GetCurrenciesCommand;
+use Coin\Trader\Command\Bittrex\GetMarketHistoryCommand;
 use Coin\Trader\Command\Bittrex\GetMarketsCommand;
 use Coin\Trader\Command\Bittrex\GetMarketSummariesCommand;
 use Coin\Trader\Command\Bittrex\GetOrderBookCommand;
@@ -21,12 +22,13 @@ $container->addServiceProvider(BittrexCommandsProvider::class);
 $container->addServiceProvider(ConfigurationServiceProvider::class);
 $container->addServiceProvider(GuzzleClientProvider::class);
 
-$application = new Application('Coin Trader', '0.1.0');
+$application = new Application('Coin Trader', '0.1.1');
 
 $application->add($container->get(GetCurrenciesCommand::class));
 $application->add($container->get(GetMarketsCommand::class));
 $application->add($container->get(GetMarketSummariesCommand::class));
 $application->add($container->get(GetTickerCommand::class));
 $application->add($container->get(GetOrderBookCommand::class));
+$application->add($container->get(GetMarketHistoryCommand::class));
 
 $application->run();

@@ -8,11 +8,13 @@ Available commands:
   
   `php ./app/cli.php currencies`: Get all supported currencies at Bittrex along with other meta data.
   
+  `php ./app/cli.php markets`: Get the open and available trading markets at Bittrex along with other meta data.
+  
+  `php ./app/cli.php market-history -m BTC-NLG`: Retrieve the latest trades that have occurred for a specific market.
+  
   `php ./app/cli.php market-summaries`: Get the last 24 hour summary of all active exchanges.
   
   `php ./app/cli.php market-summaries -m BTC-NLG`: Get the last 24 hour summary for the BTC-NLG exchange.
-  
-  `php ./app/cli.php markets`: Get the open and available trading markets at Bittrex along with other meta data.
   
   `php ./app/cli.php order-book -m BTC-NLG`: Get the current tick values for a market, e.g. BTC-NLG market.
   

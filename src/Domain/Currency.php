@@ -48,7 +48,7 @@ class Currency
      * @param array $data
      * @return Currency
      */
-    public static function fromArray(array $data)
+    public static function fromArray(array $data): Currency
     {
         $name = $data['CurrencyLong'] . ' (' . $data['Currency'] . ')';
 

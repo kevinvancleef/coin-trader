@@ -18,7 +18,8 @@ class BittrexCommandsProvider extends AbstractServiceProvider
         GetMarketsCommand::class,
         GetMarketSummariesCommand::class,
         GetTickerCommand::class,
-        GetOrderBookCommand::class
+        GetOrderBookCommand::class,
+        GetMarketHistoryCommand::class
     ];
 
     /**
@@ -46,6 +47,10 @@ class BittrexCommandsProvider extends AbstractServiceProvider
 
         $container->add(GetOrderBookCommand::class, GetOrderBookCommand::class)
             ->withArgument('order-book')
+            ->withArgument(BittrexService::class);
+
+        $container->add(GetMarketHistoryCommand::class, GetMarketHistoryCommand::class)
+            ->withArgument('market-history')
             ->withArgument(BittrexService::class);
     }
 }

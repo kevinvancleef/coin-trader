@@ -26,7 +26,7 @@ class OrderBook
         $this->sellOrders = $sellOrders;
     }
 
-    public static function fromArray(array $data)
+    public static function fromArray(array $data): OrderBook
     {
         $buyOrders = [];
         foreach ($data['buy'] as $order) {
