@@ -1,0 +1,10 @@
+<?php
+declare(strict_types = 1);
+
+return [
+    'bittrex' => [
+        'apiKey' => '',
+        'apiSecret' => '',
+        'baseUrl' => 'https://bittrex.com/api/v1.1/public'
+    ]
+];

@@ -1,0 +1,33 @@
+{
+  "name": "kevinvancleef/coin-trader",
+  "authors": [
+    {
+      "name": "Kevin van Cleef",
+      "email": "kevin@developmenstudio.nl"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^6.0",
+    "hassankhan/config": "^0.10.0",
+    "monolog/monolog": "~1.13.1",
+    "symfony/console": "^3.1",
+    "league/container": "^2.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.4",
+    "squizlabs/php_codesniffer": "~2.5"
+  },
+  "scripts": {
+    "test": "phpunit --coverage-html tmp --coverage-text"
+  },
+  "autoload": {
+    "psr-4": {
+      "Coin\\Trader\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Coin\\Trader\\Tests\\": "tests/"
+    }
+  }
+}
