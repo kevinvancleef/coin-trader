@@ -5,6 +5,7 @@ use Coin\Trader\Command\Bittrex\BittrexCommandsProvider;
 use Coin\Trader\Command\Bittrex\GetCurrenciesCommand;
 use Coin\Trader\Command\Bittrex\GetMarketsCommand;
 use Coin\Trader\Command\Bittrex\GetMarketSummariesCommand;
+use Coin\Trader\Command\Bittrex\GetOrderBookCommand;
 use Coin\Trader\Command\Bittrex\GetTickerCommand;
 use Coin\Trader\InfraStructure\Bittrex\BittrexClientProvider;
 use Coin\Trader\InfraStructure\Bittrex\BittrexServiceProvider;
@@ -26,5 +27,6 @@ $application->add($container->get(GetCurrenciesCommand::class));
 $application->add($container->get(GetMarketsCommand::class));
 $application->add($container->get(GetMarketSummariesCommand::class));
 $application->add($container->get(GetTickerCommand::class));
+$application->add($container->get(GetOrderBookCommand::class));
 
 $application->run();

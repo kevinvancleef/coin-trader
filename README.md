@@ -14,4 +14,6 @@ Available commands:
   
   `php ./app/cli.php markets`: Get the open and available trading markets at Bittrex along with other meta data.
   
+  `php ./app/cli.php order-book -m BTC-NLG`: Get the current tick values for a market, e.g. BTC-NLG market.
+  
   `php ./app/cli.php ticker -m BTC-NLG`: Get the current tick values for a market, e.g. BTC-NLG market.

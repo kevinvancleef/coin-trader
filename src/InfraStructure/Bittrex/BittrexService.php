@@ -7,6 +7,7 @@ use Coin\Trader\Domain\Bitcoin;
 use Coin\Trader\Domain\Currency;
 use Coin\Trader\Domain\Market;
 use Coin\Trader\Domain\MarketSummary;
+use Coin\Trader\Domain\OrderBook;
 
 /**
  * Class BittrexService
@@ -14,6 +15,10 @@ use Coin\Trader\Domain\MarketSummary;
  */
 class BittrexService
 {
+    const ORDER_BOOK_TYPE_SELL = 'sell';
+    const ORDER_BOOK_TYPE_BUY = 'buy';
+    const ORDER_BOOK_TYPE_BUY_AND_SELL = 'both';
+
     /**
      * @var BittrexClient
      */
@@ -85,6 +90,18 @@ class BittrexService
         $response = $this->client->getMarketSummary($marketShortName);
 
         return MarketSummary::fromArray($response['result'][0]);
+    }
+
+    /**
+     * @param string $marketShortName
+     * @param string $type
+     * @return OrderBook
+     */
+    public function getOrderBook(string $marketShortName, $type = self::ORDER_BOOK_TYPE_BUY_AND_SELL): OrderBook
+    {
+        $response = $this->client->getOrderBook($marketShortName, $type);
+
+        return OrderBook::fromArray($response['result']);
     }
 
     /**
